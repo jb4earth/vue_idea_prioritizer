@@ -1,15 +1,15 @@
 
-var products = [{ name: 'bad idea', social: 0, environmental: 0, monetary: 0, ease: 0}]
+var products = [{ name: 'bad idea', social: 0, environmental: 0, monetary: 0, ease: 0},{ name: 'bad idea', social: 0, environmental: 0, monetary: 0, ease: 0}]
 // Get Item from LocalStorage or products === []
 // var init_products = [{ name: 'bad idea', social: 0, environmental: 0, monetary: 0, ease: 0}]
 // var products = localStorage.getItem('products') || init_products;
 // If the user has more points than the currently stored high score then
-function saveProducts () {
-  if (products != init_products) {
-  // save products to local storage
-  localStorage.setItem('products', products);
-  }
-}
+// function saveProducts () {
+//   if (products != init_products) {
+//   // save products to local storage
+//   localStorage.setItem('products', products);
+//   }
+// }
 
 
 
@@ -66,14 +66,12 @@ new Vue({
       document.getElementById("ienvironmental").value = "0";
       document.getElementById("imonetary").value = "0";
       document.getElementById("iease").value = "0";
-      saveProducts()
       }
     },
     deleteItemByVue: function(ID) {
       var index = this.sort.indexOf(ID);
       console.log(index)
       if (index !== -1) this.sort.splice(index, 1);
-      saveProducts()
     },
     editItemByVue: function(ID) {
       var index = this.sort.indexOf(ID);
@@ -85,7 +83,6 @@ new Vue({
       document.getElementById("iease").value = ID.ease;
       console.log(ID.iease)
       if (index !== -1) this.sort.splice(index, 1);
-      saveProducts()
       }
     },
   mounted: function () {
