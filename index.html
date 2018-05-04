@@ -6,10 +6,10 @@
   <script src="scripts.js"></script>
 </head>
 <body>
-#products
-  pre
-    <h1>rate your ideas</h1>
-      <h4>ideas are a dime a dozen, <br/>but your efforts aren't! <br/>prioritize your ideas by <br/>rating their impact on <br/>the world and you!<br/></h4>
+  <h1>rate your ideas</h1>
+    <h4>ideas are a dime a dozen, <br/>but your efforts aren't! <br/>prioritize your ideas by <br/>rating their impact on <br/>the world and you!<br/></h4>
+  <div id="products">
+    <pre>
       <table>
         <thead>
           <tr>
@@ -29,7 +29,6 @@
             <td>{{ product.monetary }}</td>
             <td>{{ product.ease }}</td>
             <td>{{ product.total }}</td>
-            //- this is where the trouble is!
             <td>
               <button class="button-x" @click="deleteItemByVue(product);" >X</button></td>
             <td>
@@ -61,5 +60,7 @@
         </form>
         </table>
         <h2>insert idea and ratings above, sort by clicking column name</h2>
+      </pre>
+</div>
 </body>
 </html>
