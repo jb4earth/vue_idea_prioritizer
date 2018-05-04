@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="scripts.js"></script>
+</head>
+<body>
+#products
+  pre
+    <h1>rate your ideas</h1>
+      <h4>ideas are a dime a dozen, <br/>but your efforts aren't! <br/>prioritize your ideas by <br/>rating their impact on <br/>the world and you!<br/></h4>
+      <table>
+        <thead>
+          <tr>
+            <th><button v-on:click=" sortBy( 'name' ) ">name</button></th>
+            <th><button v-on:click=" sortBy( 'social' ) ">social</button></th>
+            <th><button v-on:click=" sortBy( 'environmental' ) ">environmental</button></th>
+            <th><button v-on:click=" sortBy( 'monetary' ) ">monetary</button></th>
+            <th><button v-on:click=" sortBy( 'ease' ) ">ease</button></th>
+            <th><button v-on:click=" sortBy( 'total' ) ">total</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="product in sort">
+            <td>{{ product.name }}</td>
+            <td>{{ product.social }}</td>
+            <td>{{ product.environmental }}</td>
+            <td>{{ product.monetary }}</td>
+            <td>{{ product.ease }}</td>
+            <td>{{ product.total }}</td>
+            //- this is where the trouble is!
+            <td>
+              <button class="button-x" @click="deleteItemByVue(product);" >X</button></td>
+            <td>
+              <button class="button-e" @click="editItemByVue(product);" >E</button>
+            </td>
+          </tr>
+        </tbody>
+        <form>
+          <tr>
+            <td>
+              <input id="iname" type="text"/>
+            </td>
+            <td>
+              <input id="isocial" class="slider social" type="range" min="0" max="5" value="0"/>
+            </td>
+            <td>
+              <input class="slider environmental" id="ienvironmental" type="range" min="0" max="5" value="0"/>
+            </td>
+            <td>
+              <input id="imonetary" class="slider monetary" type="range" min="0" max="5" value="0"/>
+            </td>
+            <td>
+              <input id="iease" class="slider ease" type="range" min="0" max="5" value="0"/>
+            </td>
+            <td>
+              <button class="button-add" type="button" value="add" @click="addItemByVue();">add</button>
+            </td>
+          </tr>
+        </form>
+        </table>
+        <h2>insert idea and ratings above, sort by clicking column name</h2>
+</body>
+</html>
