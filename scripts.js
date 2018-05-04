@@ -1,8 +1,8 @@
 
-
+var products = [{ name: 'bad idea', social: 0, environmental: 0, monetary: 0, ease: 0}]
 // Get Item from LocalStorage or products === []
-var init_products = [{ name: 'bad idea', social: 0, environmental: 0, monetary: 0, ease: 0}]
-var products = localStorage.getItem('products') || init_products;
+// var init_products = [{ name: 'bad idea', social: 0, environmental: 0, monetary: 0, ease: 0}]
+// var products = localStorage.getItem('products') || init_products;
 // If the user has more points than the currently stored high score then
 function saveProducts () {
   if (products != init_products) {
