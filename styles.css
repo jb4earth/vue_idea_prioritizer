@@ -1,5 +1,6 @@
 body {
   margin: 2em;
+  max-width: 80%;
 }
 h1 {
   padding: 0px;
